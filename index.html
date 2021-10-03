@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!--title, library, style -->
+    <title> Hidroponic_Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #354e51;
+        }
+
+        .box {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: #50766b;
+            border-radius: 30px;
+            height: 825px;
+            width: 95%;
+            border: 5px solid #fff;
+        }
+
+        header {
+            position: fixed;
+            background: #c9d2c6;
+            padding: 10px;
+            padding-bottom: 25px;
+            width: 40%;
+            height: 30px;
+            margin-top: -35px;
+            margin-left: 37%;
+            border-radius: 30px;
+        }
+
+        .left_area h3 {
+            color: #597c71;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 40px;
+            font-weight: 900;
+            text-align: center;
+
+        }
+
+
+        .sidebar {
+            background: #85a98d;
+            margin-top: -35px;
+            margin-left: 40px;
+            position: fixed;
+            left: 0;
+            width: 250px;
+            height: 97%;
+            transition: 0.5s;
+            transition-property: left;
+            border-radius: 40px;
+        }
+
+        .sidebar .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h4 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar h1 {
+            color: #597c71;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar b {
+            color: #fff;
+            display: block;
+            width: 105%;
+            line-height: 70px;
+            margin-left: -13px;
+            text-decoration: none;
+            padding-left: 30px;
+            box-sizing: border-box;
+            transition: 0.5s;
+            transition-property: background;
+            font-size: 25px;
+            padding-left: 40px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            background-color: #c9d2c6;
+        }
+
+        .sidebar a {
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 60px;
+            text-decoration: none;
+            padding-left: 40px;
+            box-sizing: border-box;
+            transition: 0.5s;
+            transition-property: background;
+            font-size: 22px;
+            padding: 10px;
+        }
+
+        .sidebar a:hover {
+            background: #3b5457;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+        .sidebar i {
+            padding-right: 10px;
+        }
+
+        .sidebar #select {
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .sidebar c {
+            background: #c9d2c7;
+            padding: 8px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 8px;
+            border-radius: 20px;
+            margin-bottom: 400px;
+            color: #597c71;
+            font-size: 22px;
+            font-weight: 1000;
+        }
+
+        .content {
+            margin-top: 50px;
+            margin-left: 310px;
+            width: 81%;
+            height: 750px;
+            background-color: #85a98d;
+            border-radius: 30px
+        }
+
+        #dong_ho #thoi_gian {
+            display: flex;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        #dong_ho #thoi_gian div span {
+            position: relative;
+            display: block;
+            color: #304747;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Courier, 'Open Sans', sans-serif;
+            font-size: 4rem;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Websiter content -->
+    <div class="box">
+        <!-- header area start -->
+        <header>
+            </label>
+            <div class="left_area">
+                <h3> HYDROPONIC SYSTEM </h3>
+            </div>
+            <div class="righ_area">
+            </div>
+        </header>
+        <!-- header area end -->
+
+        <!-- sidebar area star -->
+        <div class="sidebar">
+            <b href="#">
+                <h1>Panther</h1>
+            </b>
+
+            <div id="dong_ho">
+                <div id="thoi_gian">
+                    <div>
+                        <span id="gio">00</span>
+                    </div>
+                    <div>
+                        <span id="phut">00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="select">
+                <a href="#"><i class="fas fa-seedling"> <span>System 1</span></i></a>
+                <a href="#"><i class="fas fa-seedling"> <span>System 2</span></i></a>
+                <a href="#"><i class="fas fa-seedling"> <span>System 3</span></i></a>
+                <center><br>
+                    <c href="#"><span>Configure</span></c>
+                </center>
+            </div>
+
+            <center>
+                <img src="logo.png" class="logo" alt="">
+                <h4>Admin</h4>
+                <c href="#"><span>Sign out</span></c>
+            </center>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    function Dong_ho() {
+        var gio = document.getElementById("gio");
+        var phut = document.getElementById("phut");
+        var Gio_hien_tai = new Date().getHours();
+        var Phut_hien_tai = new Date().getMinutes();
+        gio.innerHTML = Gio_hien_tai + ":";
+        phut.innerHTML = Phut_hien_tai;
+    }
+    var Dem_gio = setInterval(Dong_ho, 1000);
+</script>
+
+</html>
