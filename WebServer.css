@@ -194,7 +194,7 @@ header
 }
 .Center_Left_Area
 {
-  position: absolute; top: 68.741%; left: 21.45%; text-align: center; margin: none;padding: none;
+  position: absolute; top: 660px; left: 21.45%; text-align: center; margin: none;padding: none;
 }
 .Center_Right_Area
 {
@@ -342,7 +342,7 @@ header
 }
 .Left_Area
 {
-  padding-top: 39%;
+  padding-top: 140px;
   padding-left: 1%;
 }
 .down
@@ -518,7 +518,7 @@ h1
 }
 
 .border_info{
-  margin-top: 79.4%;
+  margin-top: 580px;
   padding-left: none;
   font-size: 25px;
   text-align: center;

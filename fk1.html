@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monitoring</title>
+    <link rel="stylesheet" href="monitor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font: 14px sans-serif;
+            background-color: #85a98d;
+        }
+        
+        .wrapper {
+            float: center;
+            width: 95%;
+            padding: 20px;
+            margin: 20px;
+        }
+        
+        .box {
+            margin: auto;
+            width: 90%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js">
+    </script>
+
+</head>
+
+<body>
+    <form id="form">
+        <div class="wrapper border border-3 rounded border-dark">
+            <canvas id="myChart1"></canvas>
+            <h5 align="center" style="font-size: 100;color: rgb(30, 129, 88);">EC </h5>
+        </div>
+    </form>
+    <script>
+        var label = [];
+        var data3 = [];
+
+        const chartdata1 = {
+            labels: label,
+            datasets: [{
+                    label: 'EC ',
+                    color: 'black',
+                    backgroundColor: 'rgb(0, 179, 255)',
+                    borderColor: 'rgb(0, 179, 255)',
+                    data: data3
+                }
+
+            ]
+        };
+        const config1 = {
+            type: 'line',
+            data: chartdata1,
+            responsive: true,
+            maintainAspectRatio: false,
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            color: 'rgb(30, 129, 88)'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'white',
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: 'white',
+                        },
+
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Value ( mS/cm )',
+                            color: 'rgb(30, 129, 88)',
+                            font: {
+                                family: 'Times',
+                                size: 20,
+                                style: 'normal',
+                                lineHeight: 1.2
+                            },
+                            padding: {
+                                top: 2,
+                                left: 0,
+                                right: 0,
+                                bottom: 0
+                            }
+
+                        }
+                    }
+                }
+            }
+        };
+        var myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
+        // load data tu database
+        $(document).ready(function() {
+            updateChart();
+        });
+        setInterval(updateChart, 5000);
+
+        function updateChart() {
+            // gui request xuong database de lay data
+            $.post('readData.php', function(data) {
+                var x_axis = [];
+                var tem = [];
+
+                for (var i in data) {
+                    x_axis.push(data[i].stt);
+                    tem.push(data[i].temp);
+
+                }
+                // console.log(data1);
+                myChart1.data.labels = x_axis;
+                myChart1.data.datasets[0].data = tem;
+                myChart1.update();
+
+            })
+        }
+    </script>
+
+
+</body>
+
+</html>
